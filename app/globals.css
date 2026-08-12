@@ -1,0 +1,157 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-outfit);
+  --font-display: var(--font-fraunces);
+  --color-dusk: #0b1210;
+  --color-cream: #f4efe6;
+  --color-gold: #e4b86a;
+  --color-moss: #7ea36a;
+  --color-bark: #3a2416;
+}
+
+html,
+body {
+  background: #0b1210;
+  color: #f4efe6;
+}
+
+body {
+  font-family: var(--font-outfit), "Segoe UI", sans-serif;
+}
+
+.font-display {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-weight: 560;
+  letter-spacing: -0.03em;
+}
+
+.grove-kicker {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: color-mix(in oklab, var(--color-gold) 80%, white);
+  margin-bottom: 0.55rem;
+}
+
+.grove-btn-primary,
+.grove-btn-ghost,
+.grove-btn-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  border-radius: 999px;
+  padding: 0.65rem 1.05rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+
+.grove-btn-primary {
+  background: #f4efe6;
+  color: #0b1210;
+}
+
+.grove-btn-primary:hover {
+  background: white;
+}
+
+.grove-btn-ghost {
+  border: 1px solid rgba(244, 239, 230, 0.18);
+  color: #f4efe6;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.grove-btn-ghost:hover {
+  border-color: rgba(244, 239, 230, 0.4);
+}
+
+.grove-btn-gold {
+  background: #e4b86a;
+  color: #1a140c;
+}
+
+.grove-btn-gold:hover {
+  background: #f0c97d;
+}
+
+.grove-icon-btn {
+  display: grid;
+  place-items: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 999px;
+  border: 1px solid rgba(244, 239, 230, 0.15);
+  background: rgba(0, 0, 0, 0.25);
+  color: #f4efe6;
+}
+
+.grove-input,
+.grove-inline-input {
+  width: 100%;
+  border-radius: 0.9rem;
+  border: 1px solid rgba(244, 239, 230, 0.14);
+  background: rgba(0, 0, 0, 0.28);
+  color: #f4efe6;
+  padding: 0.7rem 0.85rem;
+}
+
+.grove-inline-input {
+  border: none;
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+}
+
+.grove-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: rgba(6, 10, 8, 0.62);
+  backdrop-filter: blur(10px);
+}
+
+.grove-panel {
+  width: min(100%, 36rem);
+  border-radius: 1.6rem;
+  border: 1px solid rgba(244, 239, 230, 0.12);
+  background: color-mix(in oklab, #142018 78%, black);
+  padding: 1.4rem;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+}
+
+.grove-drawer {
+  position: absolute;
+  top: 4.6rem;
+  right: 0.8rem;
+  z-index: 25;
+  width: min(24rem, calc(100vw - 1.6rem));
+  max-height: calc(100svh - 9rem);
+  overflow: auto;
+  border-radius: 1.5rem;
+  border: 1px solid rgba(244, 239, 230, 0.12);
+  background: rgba(10, 16, 13, 0.82);
+  padding: 1.1rem;
+  backdrop-filter: blur(16px);
+}
+
+.grain {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.18'/%3E%3C/svg%3E");
+  opacity: 0.18;
+  mix-blend-mode: overlay;
+}
+
+select.grove-input {
+  appearance: none;
+}
+
+button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
